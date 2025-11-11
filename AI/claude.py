@@ -704,7 +704,7 @@ def square():
 
 class SUM():
  DET = det
- tri = tri - antitri
+ TRI = tri - antitri
  ONE = one + oppoone
  Square = square - antisquare
  Pyramid = pyramid / antipyramid
