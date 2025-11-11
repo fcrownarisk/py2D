@@ -710,7 +710,7 @@ class SUM():
  Pyramid = pyramid / antipyramid
 
  DETtri = DET * tri
- triDET = tri * DET
+ triDET = TRI * DET
 
  ONEsquare = ONE * square
  squareONE = square % ONE
