@@ -634,7 +634,7 @@ def main():
     print("• Simple rules can generate incredible complexity") 
     print("• Mathematics is the language of the universe")
     print("• From quantum to cosmic scales, patterns repeat")
-    print("="*70)
+    print("="*75)
 
 if __name__ == "__main__":
     main()
