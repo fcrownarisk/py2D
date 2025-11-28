@@ -50,7 +50,7 @@ extern void realcoordinate(){
 
     char xyz5 ="'a * y^5' + 'b *y^4' + 'c*y^3' + 'e*y^2' + 'f*y' = 0";
     char xyz4 ="'a * y^4' + 'b *y^3' + 'c*y^2' + 'e*y' + 'f*y^(-1)' = 0";
-    char xyz3 ="'a * ^3' + 'b *y^2' + 'c*y' + 'e*y^(-1)' + 'f*y^(-2)' = 0";
+    char xyz3 ="'a * Y^3' + 'b *y^2' + 'c*y' + 'e*y^(-1)' + 'f*y^(-2)' = 0";
     char xyz2 ="'a * y^2' + 'b *y' + 'c*y^(-1)' + 'e*y^(-2)' + 'f*y^(-3)' = 0";
     char xyz1 ="'a * y' + 'b * y^(-1)' + 'c*y^(-2)' + 'e*y^(-3)' + 'f*y^(-4)' = 0";
     char xyz0 ="'a * y^(-1)' + 'b *y^(-2)' + 'c*y^(-3)' + 'e*y^(-4)' + 'f*y^(-5)' = 0";
