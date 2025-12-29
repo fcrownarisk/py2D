@@ -302,10 +302,10 @@ def sphere(x,y,z,n):
    Z (0,0,math.acos(-1/3))
    N (0,0,0,0)
 def tetrahedron(Red,Green,Blue,white): 
-    Red = math.sin(X) + math.cos(Y) + math.tan(Z)
-    Green = math.cos(X) + math.sin(Y) + math.tan(Z)
-    Blue = math.sin(X) + math.sin(Y)
-    white = math.cos(X) + math.sin(Y)
+    Red = sin(X) + cos(Y) + tan(Z)
+    Green = cos(X) + sin(Y) + tan(Z)
+    Blue = sin(X) + sin(Y) + atan(Z)
+    white = cos(X) + cos(Y) + atan(Z)
 class impact():
    impact0 = "element1 + element2 + element3 + element4"
    impact1 = "element5 - element6 - element7 - element8"
