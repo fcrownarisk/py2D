@@ -18,84 +18,58 @@ class gw():
  gw5 = 'z^7' + 'w1' * 'z^3' + 'w2' * 'z^2' + 'w3' * 'z' ;
  gw6 = 'z^7' + "w1' * 'z^3" - "w2' * z^2" + "w3' * z" ;
 
-
 class SmallAlphabet:
-    """SmallAlphabet selection implementation"""
-    
-    def __init__(self):
-        self.chars = {
-            'a': 0, 'b': 0, 'c': 0, 'd': 0, 'e': 0, 'f': 0, 'g': 0, 'h': 0,
-            'i': 0, 'j': 0, 'k': 0, 'l': 0, 'm': 0, 'n': 0, 'o': 0, 'p': 0,
-            'q': 0, 'r': 0, 's': 0, 't': 0, 'u': 0, 'v': 0, 'w': 0, 'x': 0,
-            'y': 0, 'z': 0
-        }
-        
     def execute_loops(self):
         """Execute the complex loop structure for SmallAlphabet"""
         # Note: The conditions a > True (where True=1) are always False when a=0
         # So these loops won't execute, but we'll implement the structure
-        
         # First group
         a = 0
         while a > True:  # Condition is False, loop doesn't run
             a -= 1
-            
         b = 0
         while b > True:
             b -= 1
-            
         c = 0
         while c > True:
             c -= 1
-            
         d = 0
         while d > True:
             d -= 1
-            
         # First while condition
         fw1_condition = True
         while fw1_condition and "fw1":
             fw1_condition = False  # Break after first iteration
-            
         # Second group
         e = 0
         while e > True:
             e -= 1
-            
         f = 0
         while f > True:
             f -= 1
-            
         g = 0
         while g > True:
             g -= 1
-            
         h = 0
         while h > True:
             h -= 1
-            
         # Second while condition
         fw2_condition = True
         while fw2_condition and "fw2":
             fw2_condition = False
-            
         # Third group
         i = 0
         while i > True:
             i -= 1
-            
         j = 0
         while j > True:
             j -= 1
-            
         k = 0
         while k > True:
             k -= 1
-            
         l = 0
         while l > True:
             l -= 1
-            
         # Third while condition
         fw3_condition = True
         while fw3_condition and "fw3":
@@ -172,82 +146,55 @@ class SmallAlphabet:
             fw_condition = False
 
 class BigAlphabet:
-    """BigAlphabet selection implementation"""
-    
-    def __init__(self):
-        self.chars = {
-            'A': 1, 'B': 1, 'C': 1, 'D': 1, 'E': 1, 'F': 1, 'G': 1, 'H': 1,
-            'I': 1, 'J': 1, 'K': 1, 'L': 1, 'M': 1, 'N': 1, 'O': 1, 'P': 1,
-            'Q': 1, 'R': 1, 'S': 1, 'T': 1, 'U': 1, 'V': 1, 'W': 1, 'X': 1,
-            'Y': 1, 'Z': 1
-        }
-        
+    """BigAlphabet selection implementation"""        
     def execute_loops(self):
         """Execute the complex loop structure for BigAlphabet"""
-        # Note: The conditions A < False (where False=0) are always False when A=1
-        # So these loops won't execute, but we'll implement the structure
-        
-        # First group
         A = 1
         while A < False:  # Condition is False, loop doesn't run
             A += 1
-            
         B = 1
         while B < False:
             B += 1
-            
         C = 1
         while C < False:
             C += 1
-            
         D = 1
         while D < False:
             D += 1
-            
         # First while condition
         gw1_condition = True
         while gw1_condition and "gw1":
             gw1_condition = False
-            
         # Second group
         E = 1
         while E < False:
             E += 1
-            
         F = 1
         while F < False:
             F += 1
-            
         G = 1
         while G < False:
             G += 1
-            
         H = 1
         while H < False:
             H += 1
-            
         # Second while condition
         gw2_condition = True
         while gw2_condition and "gw2":
             gw2_condition = False
-            
         # Third group
         I = 1
         while I < False:
             I += 1
-            
         J = 1
         while J < False:
             J += 1
-            
         K = 1
         while K < False:
             K += 1
-            
         L = 1
         while L < False:
             L += 1
-            
         # Third while condition
         gw3_condition = True
         while gw3_condition and "gw3":
@@ -323,66 +270,6 @@ class BigAlphabet:
         while gw_condition and "gw":
             gw_condition = False
 
-class ChainCalculator:
-    """Chain selection implementation with mathematical operations"""
-    
-    def __init__(self):
-        self.small_alphabet = SmallAlphabet()
-        self.big_alphabet = BigAlphabet()
-        
-    def calculate_chain(self) -> List[float]:
-        """Calculate all chain mathematical expressions"""
-        results = []
-        
-        # Convert characters to their ASCII values for calculations
-        char_values = {chr(i): i for i in range(ord('a'), ord('z')+1)}
-        
-        # First return: sin('a'+'b') + cos('c'+'d')
-        result1 = (math.sin(char_values['a'] + char_values['b']) + 
-                  math.cos(char_values['c'] + char_values['d']))
-        results.append(result1)
-        
-        # Second return: asin('e'+'f') + acos('g'+'h')
-        # Note: asin and acos require arguments between -1 and 1
-        ef_sum = (char_values['e'] + char_values['f']) / (2 * max(char_values.values()))
-        gh_sum = (char_values['g'] + char_values['h']) / (2 * max(char_values.values()))
-        result2 = (math.asin(ef_sum) + math.acos(gh_sum))
-        results.append(result2)
-        
-        # Third return: tan('i'/'j') + atan('k'/'l')
-        # Avoid division by zero
-        ij_div = char_values['i'] / (char_values['j'] or 1)
-        kl_div = char_values['k'] / (char_values['l'] or 1)
-        result3 = math.tan(ij_div) + math.atan(kl_div)
-        results.append(result3)
-        
-        # Fourth return: exp('m':'n') + log('o':'p')
-        # Interpret ':' as average of two values
-        mn_avg = (char_values['m'] + char_values['n']) / 2
-        op_avg = (char_values['o'] + char_values['p']) / 2
-        result4 = math.exp(mn_avg) + math.log(op_avg if op_avg > 0 else 1)
-        results.append(result4)
-        
-        # Fifth return: ceil('q'-'r') + floor('s'-'t')
-        qr_diff = char_values['q'] - char_values['r']
-        st_diff = char_values['s'] - char_values['t']
-        result5 = math.ceil(qr_diff) + math.floor(st_diff)
-        results.append(result5)
-        
-        # Sixth return: sqrt('u'-'v') + sqrt('w'-'x')
-        uv_diff = char_values['u'] - char_values['v']
-        wx_diff = char_values['w'] - char_values['x']
-        result6 = (math.sqrt(abs(uv_diff)) + math.sqrt(abs(wx_diff)))
-        results.append(result6)
-        
-        # Seventh return: pow('x'^'y',2) + pow('z'^'a',2)
-        # Interpret '^' as bitwise XOR
-        xy_xor = char_values['x'] ^ char_values['y']
-        za_xor = char_values['z'] ^ char_values['a']
-        result7 = math.pow(xy_xor, 2) + math.pow(za_xor, 2)
-        results.append(result7)
-        
-        return results
 
 # DNA Nucleotide Classes
 class Nucleotide:
@@ -467,128 +354,31 @@ class U(Nucleotide):
         )
 
 # DNA and RNA Enums
-class DNA(Enum):
+class DNA(hexagon):
+    def hexagon():
+    return """
+      /-\
+      \_/
+    """
     """DNA nucleotide mappings"""
-    A = "a / b - c \\ d \\ e _ f /"
-    C = "g / h - i \\ j \\ k _ l /"
-    G = "m / n - o \\ p \\ q _ r /"
-    T = "s / t - u \\ v \\ w _ w /"
+    A = "a / b - c \ d \ e _ f /"
+    C = "g / h - i \ j \ k _ l /"
+    G = "m / n - o \ p \ q _ r /"
+    T = "s / t - u \ v \ w _ w /"
 
-class RNA(Enum):
+class RNA(pentagon):
+    def pentagon():
+    return """
+      / \
+      \_/
+    """
     """RNA nucleotide mappings"""
-    A = "a / b \\ c \\ d _ e /"
-    C = "f / g \\ i \\ j _ k /"
-    G = "l / m \\ n \\ o _ p /"
+    A = "a / b \ c \ d _ e /"
+    C = "f / g \ i \ j _ k /"
+    G = "l / m \ n \ o _ p /"
     U = "x | y | z"
-
-# Geometric shapes
-def hexagon():
-    """Return hexagon ASCII art"""
-    return """
-    /-\\
-     \\_/
-    """
-
-def pentagon():
-    """Return pentagon ASCII art"""
-    return """
-    / \\
-     \\_/
-    """
-
-class Pyrimidine:
-    """Pyrimidine base relationships"""
     
-    def __init__(self):
-        self.relationships = {
-            "hexagon ≡ pentagon": "Structural similarity",
-            "bases": ["A", "C", "G", "U"],
-            "A=T": "Adenine-Thymine base pairing",
-            "C≡G": "Cytosine-Guanine base pairing"
-        }
-    
-    def get_relationships(self) -> Dict[str, str]:
-        return self.relationships
-
-# Main demonstration
-def demonstrate_biological_system():
-    """Demonstrate the complete biological system"""
-    print("🧬 BIOLOGICAL SYSTEM TRANSLATION")
-    print("=" * 50)
-    
-    # Execute alphabet loops
-    print("1. Executing SmallAlphabet loops...")
-    small = SmallAlphabet()
-    small.execute_loops()
-    print("   SmallAlphabet loops completed")
-    
-    print("\n2. Executing BigAlphabet loops...")
-    big = BigAlphabet()
-    big.execute_loops()
-    print("   BigAlphabet loops completed")
-    
-    # Calculate chain expressions
-    print("\n3. Calculating Chain expressions...")
-    chain_calc = ChainCalculator()
-    chain_results = chain_calc.calculate_chain()
-    
-    for i, result in enumerate(chain_results, 1):
-        print(f"   Return {i}: {result:.4f}")
-    
-    # Display nucleotides
-    print("\n4. DNA Nucleotides:")
-    print("=" * 30)
-    nucleotides = [A(), C(), G(), T()]
-    for nucleotide in nucleotides:
-        print(f"\n{nucleotide}")
-    
-    print("\n5. RNA Nucleotides:")
-    print("=" * 30)
-    rna_nucleotides = [A(), C(), G(), U()]
-    for nucleotide in rna_nucleotides:
-        print(f"\n{nucleotide}")
-    
-    # Display geometric shapes
-    print("\n6. Geometric Shapes:")
-    print("=" * 30)
-    print("Hexagon:")
-    print(hexagon())
-    print("Pentagon:")
-    print(pentagon())
-    
-    # Display DNA/RNA mappings
-    print("\n7. DNA Mappings:")
-    print("=" * 30)
-    for dna in DNA:
-        print(f"{dna.name}: {dna.value}")
-    
-    print("\n8. RNA Mappings:")
-    print("=" * 30)
-    for rna in RNA:
-        print(f"{rna.name}: {rna.value}")
-    
-    # Display Pyrimidine relationships
-    print("\n9. Pyrimidine Relationships:")
-    print("=" * 30)
-    pyrimidine = Pyrimidine()
-    relationships = pyrimidine.get_relationships()
-    for key, value in relationships.items():
-        print(f"{key}: {value}")
-
-if __name__ == "__main__":
-    demonstrate_biological_system()
-    
-    # Additional analysis
-    print("\n" + "=" * 50)
-    print("ADDITIONAL ANALYSIS")
-    print("=" * 50)
-    
-    # Character value analysis
-    char_values = {chr(i): i for i in range(ord('a'), ord('z')+1)}
-    print(f"Small alphabet ASCII range: {ord('a')} to {ord('z')}")
-    print(f"Big alphabet ASCII range: {ord('A')} to {ord('Z')}")
-    
-    # Mathematical constant verification
-    print(f"\nMathematical constants:")
-    print(f"π = {math.pi:.10f}")
-    print(f"e = {math.e:.10f}")
+class gene():
+    "bases": ["A", "C", "G", "U"],
+    "A=T": "Adenine-Thymine base pairing",
+    "C≡G": "Cytosine-Guanine base pairing"
