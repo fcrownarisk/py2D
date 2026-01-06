@@ -1,5 +1,6 @@
 import math
 import time
+
 def xyznnn(x, y, z, n):
     return [ 
         (x+n,y-n,z+n,  x+n,y-n,z-n,  x+n,y+n,z-n,  x+n,y+n,z+n), # Right face (x+n)
@@ -290,7 +291,7 @@ class Green():
 class Blue():
  def C2H4(C=2,H=4): pass
  def C6H8(C=6,H=8): pass
- def C14H16(C=16,H=16): pass
+ def C14H16(C=14,H=16): pass
 
 class white():
  def CH4(C1H4,C5H8,C13H24): yield
