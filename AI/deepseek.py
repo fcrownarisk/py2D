@@ -36,11 +36,11 @@ def tex_coords(top, bottom, side):
 
 TEXTURE_PATH = 'texture.png'
 
-GRASS = tex_coords((1, 0), (0, 1), (0, 0))
+GRASS = tex_coords((1, 0), (1, 0), (1, 0))
 SAND  = tex_coords((1, 1), (1, 1), (1, 1))
 BRICK = tex_coords((2, 0), (2, 0), (2, 0))
 STONE = tex_coords((2, 1), (2, 1), (2, 1))
-WATER = tex_coords((1, 0), (0, 1), (1, 1))
+WATER = tex_coords((0, 1), (0, 1), (0, 1))
 GLASS = tex_coords((1, 2), (1, 2), (1, 2))
 
 FACES = [
@@ -377,9 +377,7 @@ class Window(pyglet.window.Window):
             self.reticle.delete()
         x, y = self.width // 2, self.height // 2
         n = 10
-        self.reticle = pyglet.graphics.vertex_list(4,
-            ('v2i', (x - n, y, x + n, y, x, y - n, x, y + n))
-        )
+        self.reticle = pyglet.graphics.vertex_list(4,('v2i', (x - n, y, x + n, y, x, y - n, x, y + n)))
 
     def set_2d(self):
         width, height = self.get_size()
