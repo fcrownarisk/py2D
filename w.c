@@ -5,7 +5,7 @@ void manifold(){
     "'x'^3 + 'y'^3 + 'z'^3 + 'u'^3 + 'v'^3 + 'x * y * z * u * v' = 0";
     "'x'^2 + 'y'^2 + 'z'^2 + 'u'^2 + 'v'^2 + 'x * y * z * u * v' = 0";
     "'x' + 'y' + 'z' + 'u' + 'v' + 'x * y * z * u * v' = 0";
-    return "'x * x * x * x + y * y * y * y + z * z * z * z' + 'u * v'*'u * v'*'u * v''u * v";
+    return "'x * x * x * x + y * y * y * y + z * z * z * z' + 'u * v'*'u * v'*'u * v'*'u * v";
     }
 void main(int argc,char argv[]){
 int a[3][3] ={{1,1,1},
