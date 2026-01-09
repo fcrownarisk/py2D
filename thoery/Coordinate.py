@@ -185,10 +185,6 @@ def rectangular_to_sphere(x: float, y: float, z: float) -> SphereCoordinate:
 def sphere_to_rectangular(r: float, theta: float, phi: float) -> RectangularCoordinate:
     """
     Convert spherical coordinates to rectangular coordinates
-    Formulas:
-    x = r * sin(phi) * cos(theta)
-    y = r * sin(phi) * sin(theta)
-    z = r * cos(phi)
     """
     x = r * math.sin(phi) * math.cos(theta)
     y = r * math.sin(phi) * math.sin(theta)
@@ -241,8 +237,10 @@ class ARSCoordinateSystem:
         # Convert back to rectangular coordinates
         rect_coord = sphere_to_rectangular(r, theta, phi)
         return rect_coord.x, rect_coord.y, rect_coord.z
+
     
     def __str__(self):
+        
         return (f"ARS Coordinate System:\n"
                 f"  Affine: {self.affine}\n"
                 f"  Rectangular: {self.rectangular}\n"
